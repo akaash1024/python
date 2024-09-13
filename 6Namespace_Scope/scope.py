@@ -70,3 +70,17 @@ print(f(3)) ## here, f holding actual function defination, so react like that so
 g = chaiCoder(3)
 print(g)
 print(g(3))
+
+# ----------------Above code
+def chaiCoder(num):
+    def actual(x):
+        return x**num  # Raises x to the power of num
+    return actual  # Return the inner function
+
+f = chaiCoder(2)  # f now holds the actual function where num is 2
+print(f)  # This will print the function's memory address
+print(f(3))  # This will compute 3**2 and return 9
+
+g = chaiCoder(3)  # g now holds the actual function where num is 3
+print(g)  # This will print the function's memory address
+print(g(3))  # This will compute 3**3 and return 27
